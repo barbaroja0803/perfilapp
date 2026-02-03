@@ -2,49 +2,51 @@
 import { Skill, Experience } from './types';
 
 export const FULL_NAME = "JUNIOR WILLIAM ANCHUNDIA SOZA";
-export const TITLE = "Ingeniero en Sistemas | Magíster en DevOps";
-export const BIO = "Profesional apasionado por la automatización y la infraestructura escalable. Con 8 años de trayectoria, he liderado la transformación digital optimizando ciclos de vida de software a través de arquitecturas en la nube, contenedores y cultura DevOps.";
+export const TITLE = "Full-Cycle Engineer | Software Architect | DevOps Lead";
+export const BIO = "Arquitecto de soluciones integrales con 8 años de experiencia. Mi enfoque une la precisión del desarrollo de software de alto rendimiento con la robustez de la infraestructura moderna. No solo construyo el código; diseño el ecosistema donde vive, escala y evoluciona.";
 
 export const SKILLS: Skill[] = [
+  // Development Core
+  { name: "Go / Python", level: 92, category: "Development", icon: "fa-code" },
+  { name: "React / TS", level: 88, category: "Development", icon: "fa-laptop-code" },
+  { name: "Node.js / Bun", level: 85, category: "Development", icon: "fa-server" },
+  { name: "PostgreSQL / Redis", level: 90, category: "Development", icon: "fa-database" },
+  // Ops Core
   { name: "Kubernetes", level: 95, category: "Infrastructure", icon: "fa-dharmachakra" },
-  { name: "AWS / Azure", level: 90, category: "Cloud", icon: "fa-cloud" },
-  { name: "Terraform", level: 92, category: "Infrastructure", icon: "fa-code" },
-  { name: "Docker", level: 98, category: "Infrastructure", icon: "fa-box-open" },
-  { name: "CI/CD Pipelines", level: 95, category: "Automation", icon: "fa-sync" },
-  { name: "Python / Bash", level: 85, category: "Development", icon: "fa-terminal" },
-  { name: "Monitoring (Prometheus)", level: 88, category: "Infrastructure", icon: "fa-chart-line" },
-  { name: "Jenkins / Gitlab CI", level: 94, category: "Automation", icon: "fa-tools" },
+  { name: "Terraform", level: 94, category: "Infrastructure", icon: "fa-cloud-arrow-up" },
+  { name: "AWS / Azure", level: 92, category: "Cloud", icon: "fa-brands fa-aws" },
+  { name: "GitHub Actions", level: 96, category: "Automation", icon: "fa-bolt" },
 ];
 
 export const EXPERIENCES: Experience[] = [
   {
     company: "Global Tech Solutions",
-    role: "Senior DevOps Engineer",
+    role: "Senior Full-Cycle Engineer",
     period: "2021 - Presente",
     description: [
-      "Liderazgo en la migración de infraestructura On-Premise a AWS multi-región.",
-      "Implementación de arquitecturas de microservicios con Kubernetes y Helm.",
-      "Reducción de costos operativos en un 30% mediante la optimización de recursos Cloud."
+      "Diseño y desarrollo de microservicios en Go con arquitectura hexagonal.",
+      "Liderazgo en la orquestación de clústeres EKS para soportar +1M de peticiones concurrentes.",
+      "Optimización del performance de aplicaciones React mediante SSR y edge caching."
     ]
   },
   {
     company: "Innovate Corp",
-    role: "DevOps Specialist",
+    role: "Software & DevOps Specialist",
     period: "2018 - 2021",
     description: [
-      "Automatización completa del pipeline de despliegue usando Jenkins y Ansible.",
-      "Gestión de bases de datos críticas y sistemas de alta disponibilidad.",
-      "Implementación de políticas de seguridad (DevSecOps) en el ciclo de CI/CD."
+      "Desarrollo de APIs robustas en Python/FastAPI integradas con pipelines de CI/CD.",
+      "Automatización de infraestructura como código (IaC) para entornos de staging y prod.",
+      "Implementación de sistemas de mensajería asíncrona con RabbitMQ y Kafka."
     ]
   },
   {
     company: "Core Systems S.A.",
-    role: "Systems Administrator",
+    role: "Full Stack Developer",
     period: "2015 - 2018",
     description: [
-      "Administración de servidores Linux/Windows y redes corporativas.",
-      "Desarrollo de scripts internos para automatización de tareas de mantenimiento.",
-      "Soporte técnico avanzado y resolución de incidentes críticos."
+      "Desarrollo de aplicaciones web empresariales utilizando el stack MEAN.",
+      "Administración y tuning de bases de datos relacionales para optimización de queries.",
+      "Migración de aplicaciones legacy a arquitecturas modernas basadas en contenedores."
     ]
   }
 ];
