@@ -14,8 +14,8 @@ services:
     environment:
       - NODE_ENV=production
     networks:
-      - perfilapp-network
+      - traefik_net
 
 networks:
-  perfilapp-network:
+  traefik_net:
     driver: bridge
