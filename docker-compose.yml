@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  perfilapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        GEMINI_API_KEY: ${GEMINI_API_KEY}
+    container_name: perfilapp
+    ports:
+      - "3004:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - perfilapp-network
+
+networks:
+  perfilapp-network:
+    driver: bridge
