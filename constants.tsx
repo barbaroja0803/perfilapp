@@ -7,13 +7,13 @@ export const BIO = "Arquitecto de soluciones integrales con 8 años de experienc
 
 export const SKILLS: Skill[] = [
   // Development Core
-  { name: "Go / Python", level: 92, category: "Development", icon: "fa-code" },
+  { name: "Flutter / Python", level: 92, category: "Development", icon: "fa-code" },
   { name: "React / TS", level: 88, category: "Development", icon: "fa-laptop-code" },
-  { name: "Node.js / Bun", level: 85, category: "Development", icon: "fa-server" },
-  { name: "PostgreSQL / Redis", level: 90, category: "Development", icon: "fa-database" },
+  { name: "Node.js / .net", level: 85, category: "Development", icon: "fa-server" },
+  { name: "PostgreSQL / Sql server", level: 90, category: "Development", icon: "fa-database" },
   // Ops Core
   { name: "Kubernetes", level: 95, category: "Infrastructure", icon: "fa-dharmachakra" },
-  { name: "Terraform", level: 94, category: "Infrastructure", icon: "fa-cloud-arrow-up" },
+  { name: "Docker", level: 94, category: "Infrastructure", icon: "fa-cloud-arrow-up" },
   { name: "AWS / Azure", level: 92, category: "Cloud", icon: "fa-brands fa-aws" },
   { name: "GitHub Actions", level: 96, category: "Automation", icon: "fa-bolt" },
 ];

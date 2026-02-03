@@ -11,7 +11,7 @@ const App: React.FC = () => {
       <header className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="font-mono text-cyan-400 font-bold tracking-tighter text-xl">./J_ANCHUNDIA</span>
+            <span className="font-mono text-cyan-400 font-bold tracking-tighter text-xl">./WILLIAM_ANCHUNDIA</span>
             <div className="hidden sm:block h-4 w-px bg-slate-800"></div>
             <span className="hidden sm:block text-[10px] font-mono text-slate-500 uppercase tracking-widest">Architect_Build: stable_v8.0</span>
           </div>
@@ -45,7 +45,6 @@ const App: React.FC = () => {
             <div className="flex flex-wrap gap-4 font-mono text-xs">
                <div className="px-4 py-2 bg-slate-900 border border-slate-800 text-slate-400"># SOFTWARE_ENGINEERING</div>
                <div className="px-4 py-2 bg-slate-900 border border-slate-800 text-slate-400"># DEVOPS_CULTURE</div>
-               <div className="px-4 py-2 bg-slate-900 border border-slate-800 text-slate-400"># CLOUD_ARCHITECT</div>
             </div>
           </div>
           <div className="lg:col-span-4 relative group">
@@ -57,9 +56,9 @@ const App: React.FC = () => {
                   className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500"
                 />
                 <div className="mt-4 p-4 bg-black/50 rounded-2xl font-mono text-[10px] text-cyan-400/70">
-                   &gt; identity_check: Junior William<br/>
-                   &gt; location: Manta, EC<br/>
-                   &gt; role: Sr_Engineer
+                   &gt; identity_check: Junior William Anchundia Soza<br/>
+                   &gt; role: Sr_Engineer, Cloud_Specialist<br/>
+                   &gt; status: Freelance <br/>
                 </div>
              </div>
           </div>
@@ -142,13 +141,24 @@ const App: React.FC = () => {
               </p>
               
               <div className="grid gap-4">
-                 <a href="mailto:junior.anchundia@email.com" className="flex items-center gap-6 p-4 bg-slate-900 border border-white/5 hover:border-cyan-400/50 transition-all group">
+                 <a href="mailto:janchundiaws@gmail.com" className="flex items-center gap-6 p-4 bg-slate-900 border border-white/5 hover:border-cyan-400/50 transition-all group">
                     <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-cyan-400">
                        <i className="fa-solid fa-envelope"></i>
                     </div>
                     <div>
                        <div className="text-[10px] font-mono text-slate-500 uppercase">Primary_Channel</div>
-                       <div className="text-slate-200 group-hover:text-cyan-400 transition-colors">junior.anchundia@email.com</div>
+                       <div className="text-slate-200 group-hover:text-cyan-400 transition-colors">janchundiaws@gmail.com</div>
+                    </div>
+                 </a>
+              </div>
+              <div className="grid gap-4">
+                 <a href="mailto:junior_soza@hotmail.es" className="flex items-center gap-6 p-4 bg-slate-900 border border-white/5 hover:border-cyan-400/50 transition-all group">
+                    <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-cyan-400">
+                       <i className="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                       <div className="text-[10px] font-mono text-slate-500 uppercase">Secundary_Channel</div>
+                       <div className="text-slate-200 group-hover:text-cyan-400 transition-colors">junior_soza@hotmail.es</div>
                     </div>
                  </a>
               </div>
@@ -164,11 +174,11 @@ const App: React.FC = () => {
       <footer className="py-20 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
            <div className="font-mono text-[10px] text-slate-700 uppercase tracking-widest">
-              Built_with: React + Gemini_AI // 2025_Edition
+              Built_with: React // 2025_Edition
            </div>
            <div className="flex gap-8 text-xl text-slate-600">
-              <i className="fa-brands fa-github hover:text-cyan-400 cursor-pointer transition-colors"></i>
-              <i className="fa-brands fa-linkedin hover:text-cyan-400 cursor-pointer transition-colors"></i>
+              <a href="https://github.com/barbaroja0803"><i className="fa-brands fa-github hover:text-cyan-400 cursor-pointer transition-colors"></i></a>
+              <a href="https://www.linkedin.com/in/william-anchundia-soza/"><i className="fa-brands fa-linkedin hover:text-cyan-400 cursor-pointer transition-colors" ></i></a>
               <i className="fa-solid fa-terminal hover:text-cyan-400 cursor-pointer transition-colors"></i>
            </div>
         </div>
