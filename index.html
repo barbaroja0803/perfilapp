@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior William Anchundia Soza | Infrastructure Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blueprint-bg: #030816;
+            --line-color: rgba(0, 242, 255, 0.1);
+            --accent-cyan: #00f2ff;
+        }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--blueprint-bg);
+            color: #d1d5db;
+            background-image: 
+                linear-gradient(var(--line-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--line-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            scroll-behavior: smooth;
+        }
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+        .blueprint-card {
+            background: rgba(10, 25, 47, 0.8);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        .blueprint-card::before {
+            content: '';
+            position: absolute;
+            top: -5px; left: -5px;
+            width: 10px; height: 10px;
+            border-top: 2px solid var(--accent-cyan);
+            border-left: 2px solid var(--accent-cyan);
+        }
+        .blueprint-card::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; right: -5px;
+            width: 10px; height: 10px;
+            border-bottom: 2px solid var(--accent-cyan);
+            border-right: 2px solid var(--accent-cyan);
+        }
+        .blueprint-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        .node-line {
+            position: absolute;
+            background: linear-gradient(to bottom, var(--accent-cyan), transparent);
+            width: 1px;
+            z-index: -1;
+        }
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-cyan);
+            border-radius: 10px;
+        }
+        .glitch-text:hover {
+            text-shadow: 2px 0 var(--accent-cyan), -2px 0 #ff00c1;
+            animation: glitch 0.3s infinite;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Junior Anchundia - DevOps Portfolio",
+  "description": "A high-end, dynamic professional portfolio for a Senior DevOps Engineer and Systems Engineer with 8 years of experience.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
