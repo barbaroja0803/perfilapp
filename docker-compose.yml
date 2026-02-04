@@ -8,14 +8,21 @@ services:
       args:
         GEMINI_API_KEY: ${GEMINI_API_KEY}
     container_name: perfilapp
-    ports:
-      - "3004:80"
+    # ports:
+    #   - "81:80"
     restart: unless-stopped
     environment:
       - NODE_ENV=production
     networks:
-      - traefik_net
+      - proxy_network
+    labels:
+      - "traefik.http.routers.perfilapp.rule=Host(`william-as.com`) && PathPrefix(`/`)"
+      #- "traefik.http.routers.perfilapp.rule=Host(`william-as.com`)"
+      - "traefik.enable=true"
+      #- "traefik.http.routers.perfilapp.rule=Host(`william-as.com`)"
+      - "traefik.http.routers.perfilapp.entrypoints=web"
+      - "traefik.http.services.perfilapp.loadbalancer.server.port=80"
 
 networks:
-  traefik_net:
-    driver: bridge
+  proxy_network:
+    external: true
