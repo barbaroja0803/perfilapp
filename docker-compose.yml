@@ -16,13 +16,25 @@ services:
     networks:
       - proxy_network
     labels:
-      - "traefik.http.routers.perfilapp.rule=Host(`william-as.com`) && PathPrefix(`/`)"
-      #- "traefik.http.routers.perfilapp.rule=Host(`william-as.com`)"
+      # - "traefik.http.routers.perfilapp.rule=Host(`william-as.com`) && PathPrefix(`/`)"
+      # - "traefik.enable=true"
+      # - "traefik.http.routers.perfilapp.entrypoints=web"
+      # - "traefik.http.services.perfilapp.loadbalancer.server.port=80"
       - "traefik.enable=true"
-      #- "traefik.http.routers.perfilapp.rule=Host(`william-as.com`)"
-      - "traefik.http.routers.perfilapp.entrypoints=web"
-      - "traefik.http.services.perfilapp.loadbalancer.server.port=80"
 
+      # HTTP → redirige a HTTPS
+      - "traefik.http.routers.william-as-http.rule=Host(`william-as.com`) && PathPrefix(`/`)"
+      - "traefik.http.routers.william-as-http.entrypoints=web"
+      - "traefik.http.routers.william-as-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+
+      # HTTPS
+      - "traefik.http.routers.william-as.rule=Host(`william-as.com`) && PathPrefix(`/`)"
+      - "traefik.http.routers.william-as.entrypoints=websecure"
+      - "traefik.http.routers.william-as.tls.certresolver=myresolver"
+
+      # Servicio (puerto interno del contenedor)
+      - "traefik.http.services.william-as.loadbalancer.server.port=80"
 networks:
   proxy_network:
     external: true
