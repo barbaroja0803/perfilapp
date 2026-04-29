@@ -21,8 +21,11 @@ jobs:
           script: |
             cd /root/perfilapp
 
+            echo "Descargando todos los cambios del repositorio..."
+            git fetch origin
+
             echo "Actualizando repositorio..."
-            git pull origin main
+            git reset --hard origin/${{ secrets.SERVER_BRANCH }}
 
             echo "Deteniendo contenedores..."
             docker-compose down
