@@ -5,7 +5,7 @@ import { getGeminiResponse } from '../services/geminiService';
 
 const ChatBot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: 'DEBUGGER_INITIALIZED. Junior.Architect core online. Estoy listo para procesar tus consultas sobre desarrollo, infraestructura o arquitectura.' }
+    { role: 'assistant', content: 'DEBUGGER_INITIALIZED. Junior William.Architect core online. Estoy listo para procesar tus consultas sobre desarrollo, infraestructura o arquitectura.' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);

@@ -1,0 +1,319 @@
+
+import React, { useEffect, useState } from 'react';
+import { FULL_NAME, TITLE, BIO, SKILLS, EXPERIENCES } from './constants';
+import ChatBot from './components/ChatBot';
+
+const App: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const totalSlides = 4; // Hero, Skills, Experience, Contact
+  
+  useEffect(() => {
+    setTimeout(() => setIsVisible(true), 100);
+    
+    // Keyboard navigation
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        if (currentSlide < totalSlides - 1) {
+          setCurrentSlide(prev => prev + 1);
+        }
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        if (currentSlide > 0) {
+          setCurrentSlide(prev => prev - 1);
+        }
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentSlide]);
+
+  const nextSlide = () => {
+    if (currentSlide < totalSlides - 1) {
+      setCurrentSlide(prev => prev + 1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(prev => prev - 1);
+    }
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  const slideNames = ['HOME', 'SKILLS', 'EXPERIENCE', 'CONTACT'];
+
+  return (
+    <div className="relative hologram">{/* ... resto del código ... */}
+      
+      {/* Cyberpunk Header */}
+      <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-cyan-500/20">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-cyan-400 font-bold tracking-tighter text-xl glow-text glitch">
+              ./W_ANCHUNDIA.SYS
+            </span>
+            <div className="hidden sm:block h-4 w-px bg-purple-500/50"></div>
+            <span className="hidden sm:block text-[10px] font-mono text-purple-400 uppercase tracking-widest">
+              v2.077_CYBERPUNK_BUILD
+            </span>
+          </div>
+          <div className="flex gap-4">
+             <div className="flex flex-col items-end">
+                <span className="text-[9px] font-mono text-pink-500 uppercase">NEURAL_LOAD</span>
+                <div className="flex gap-1">
+                   {[...Array(5)].map((_, i) => (
+                     <div 
+                       key={i} 
+                       className="w-3 h-1 bg-gradient-to-r from-cyan-500 to-purple-500"
+                       style={{
+                         animation: `neonPulse 1.5s ease-in-out infinite`,
+                         animationDelay: `${i * 0.15}s`,
+                         boxShadow: '0 0 5px currentColor'
+                       }}
+                     ></div>
+                   ))}
+                </div>
+             </div>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-6 pt-32 pb-32">
+        
+        {/* Hero Section - Cyberpunk Style */}
+        <section className={`mb-40 grid lg:grid-cols-12 gap-12 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="lg:col-span-8 space-y-10">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 border-2 border-cyan-500/30 text-cyan-400 font-mono text-[11px] uppercase tracking-widest hover:bg-cyan-500/20 hover:scale-105 transition-all cursor-default ripple"
+                 style={{boxShadow: '0 0 20px rgba(0, 243, 255, 0.3)'}}>
+              ◉ ONLINE_FOR_HIRE
+            </div>
+            <h1 className="text-6xl lg:text-9xl font-extrabold text-white tracking-tighter leading-[0.85] parallax">
+              <span className="glitch">CODE.</span><br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 glow-text">
+                ARCHITECT.
+              </span><br/>
+              <span className="glitch">EVOLVE.</span>
+            </h1>
+            <p className="max-w-xl text-lg text-slate-300 font-light leading-relaxed">
+              {BIO}
+            </p>
+            <div className="flex flex-wrap gap-4 font-mono text-xs">
+               <div className="px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-transparent border-l-2 border-cyan-400 text-cyan-400 hover:bg-cyan-500/20 transition-all hover-lift cursor-default"
+                    style={{boxShadow: '0 0 10px rgba(0, 243, 255, 0.2)'}}>
+                 # FULLSTACK_ENGINEER
+               </div>
+               <div className="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-transparent border-l-2 border-purple-400 text-purple-400 hover:bg-purple-500/20 transition-all hover-lift cursor-default"
+                    style={{boxShadow: '0 0 10px rgba(168, 85, 247, 0.2)'}}>
+                 # CLOUD_ARCHITECT
+               </div>
+            </div>
+          </div>
+          <div className="lg:col-span-4 relative group">
+             <div className="absolute inset-0 bg-cyan-500/20 blur-[120px] group-hover:bg-purple-500/30 transition-all duration-1000"></div>
+             <div className="absolute inset-0 bg-pink-500/10 blur-[80px] group-hover:animate-pulse"></div>
+             <div className="relative z-10 bg-black/50 border-2 border-cyan-400/30 p-4 rounded-3xl backdrop-blur-xl hover:border-pink-400/50 transition-all duration-500 hover-lift"
+                  style={{boxShadow: '0 0 40px rgba(0, 243, 255, 0.2)'}}>
+                <img 
+                  src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Junior&backgroundColor=000000" 
+                  alt="Avatar" 
+                  className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105"
+                />
+                <div className="mt-4 p-4 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-2xl font-mono text-[10px] text-cyan-400 border border-cyan-400/20">
+                   <span className="text-pink-400">&gt;</span> sys.identity: <span className="text-white">Junior_W_Anchundia</span><br/>
+                   <span className="text-pink-400">&gt;</span> role: <span className="text-purple-400">Sr_Engineer</span>, <span className="text-cyan-400">Cloud_Ops</span><br/>
+                   <span className="text-pink-400">&gt;</span> status: <span className="text-green-400 animate-pulse">● ACTIVE</span> | Freelance<br/>
+                </div>
+             </div>
+          </div>
+        </section>
+
+        {/* Skills - Neon Cards */}
+        <section id="skills" className="mb-40 parallax">
+          <div className="section-tag mb-12">
+            <span className="text-cyan-400">SYSTEM_MODULES</span> <span className="text-purple-400">(CAPABILITIES)</span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {SKILLS.map((skill, idx) => (
+              <div key={idx} className="skill-ic p-6 group" style={{ animationDelay: `${idx * 0.1}s` }}>
+                {/* Neon Pins */}
+                <div className="ic-pin top-2 -left-1"></div>
+                <div className="ic-pin top-8 -left-1"></div>
+                <div className="ic-pin bottom-2 -right-1"></div>
+                <div className="ic-pin bottom-8 -right-1"></div>
+                
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-400 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12"
+                       style={{boxShadow: '0 0 15px rgba(0, 243, 255, 0.3)'}}>
+                    <i className={`fa-solid ${skill.icon} text-xl`}></i>
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className="text-[10px] font-mono text-purple-400 uppercase tracking-tighter">LOAD</span>
+                    <span className="text-lg font-bold text-cyan-400 glow-text">{skill.level}%</span>
+                  </div>
+                </div>
+                
+                <h3 className="font-bold text-white mb-4 uppercase tracking-tight group-hover:text-cyan-400 transition-colors">
+                  {skill.name}
+                </h3>
+                
+                <div className="space-y-2">
+                   <div className="h-1 w-full bg-slate-900 rounded-full overflow-hidden border border-cyan-400/20">
+                      <div 
+                        className="h-full bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 transition-all duration-1000 ease-out relative" 
+                        style={{
+                          width: `${skill.level}%`,
+                          boxShadow: '0 0 15px rgba(0, 243, 255, 0.8)'
+                        }}
+                      >
+                        <div className="absolute inset-0 bg-white/30 animate-pulse"></div>
+                      </div>
+                   </div>
+                   <div className="flex justify-between text-[9px] font-mono">
+                      <span className="text-cyan-400/70">SYNC_RATE</span>
+                      <span className="text-pink-400/70">OPTIMAL</span>
+                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Experience - Holographic Records */}
+        <section id="experience" className="mb-40 parallax">
+           <div className="section-tag mb-12" style={{
+             borderLeftColor: 'var(--neon-purple)',
+             background: 'linear-gradient(90deg, rgba(168, 85, 247, 0.1), transparent)'
+           }}>
+             <span className="text-purple-400">DEPLOYMENT_LOG</span> <span className="text-pink-400">(HISTORY)</span>
+           </div>
+           <div className="space-y-6">
+             {EXPERIENCES.map((exp, idx) => (
+               <div 
+                 key={idx} 
+                 className="group relative bg-gradient-to-r from-black to-slate-950 border-2 border-purple-500/20 p-8 lg:p-12 hover:border-cyan-400/50 transition-all duration-500 overflow-hidden hover-lift ripple"
+                 style={{ 
+                   animationDelay: `${idx * 0.15}s`,
+                   boxShadow: '0 0 20px rgba(168, 85, 247, 0.1)'
+                 }}
+               >
+                 {/* Neon glow on hover */}
+                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 
+                 <div className="absolute right-4 top-4 font-mono text-[60px] font-black text-cyan-400/5 group-hover:text-cyan-400/10 transition-all duration-500">
+                   0{idx+1}
+                 </div>
+                 
+                 <div className="relative z-10 flex flex-col lg:flex-row gap-12">
+                   <div className="lg:w-1/3">
+                      <div className="text-pink-400 font-mono text-sm mb-2 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{boxShadow: '0 0 5px currentColor'}}></span>
+                        {exp.period}
+                      </div>
+                      <h3 className="text-3xl font-black text-white leading-none uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 transition-all duration-300">
+                        {exp.role}
+                      </h3>
+                      <div className="mt-4 px-3 py-1 inline-block bg-cyan-500/10 border border-cyan-400/30 rounded text-xs font-mono text-cyan-400 uppercase tracking-[0.2em]">
+                        {exp.company}
+                      </div>
+                   </div>
+                   <div className="flex-1 space-y-4">
+                      {exp.description.map((item, i) => (
+                        <div key={i} className="flex gap-4 items-start group/item">
+                           <span className="text-cyan-400 font-mono text-sm mt-1 group-hover/item:translate-x-2 transition-transform flex items-center gap-1">
+                             <span className="text-purple-400">▸</span> deploy
+                           </span>
+                           <p className="text-slate-400 leading-relaxed font-light group-hover/item:text-slate-200 transition-colors">
+                             {item}
+                           </p>
+                        </div>
+                      ))}
+                   </div>
+                 </div>
+               </div>
+             ))}
+           </div>
+        </section>
+
+        {/* Contact - Neural Interface */}
+        <section id="contact" className="grid lg:grid-cols-2 gap-12 pt-12 parallax">
+           <div className="space-y-8">
+              <div className="section-tag" style={{
+                borderLeftColor: '#fff',
+                background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent)',
+                boxShadow: '0 0 20px rgba(255, 255, 255, 0.1)'
+              }}>
+                <span className="text-white">NEURAL_INTERFACE</span>
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">
+                Ready to jack in?
+              </h2>
+              <p className="text-slate-300 text-lg font-light leading-relaxed">
+                Conectemos sobre arquitecturas distribuidas, cloud native, DevOps o cómo llevar tu stack al siguiente nivel.
+              </p>
+              
+              <div className="grid gap-4">
+                 <a href="mailto:janchundiaws@gmail.com" 
+                    className="flex items-center gap-6 p-5 bg-gradient-to-r from-cyan-500/10 to-transparent border-2 border-cyan-400/30 hover:border-cyan-400/60 transition-all group hover-lift ripple"
+                    style={{boxShadow: '0 0 20px rgba(0, 243, 255, 0.1)'}}>
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border-2 border-cyan-400 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform"
+                         style={{boxShadow: '0 0 20px rgba(0, 243, 255, 0.3)'}}>
+                       <i className="fa-solid fa-envelope text-xl"></i>
+                    </div>
+                    <div>
+                       <div className="text-[10px] font-mono text-purple-400 uppercase mb-1">PRIMARY_CHANNEL</div>
+                       <div className="text-slate-200 group-hover:text-cyan-400 transition-colors font-mono">janchundiaws@gmail.com</div>
+                    </div>
+                 </a>
+                 
+                 <a href="mailto:junior_soza@hotmail.es" 
+                    className="flex items-center gap-6 p-5 bg-gradient-to-r from-purple-500/10 to-transparent border-2 border-purple-400/30 hover:border-purple-400/60 transition-all group hover-lift ripple"
+                    style={{boxShadow: '0 0 20px rgba(168, 85, 247, 0.1)'}}>
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-2 border-purple-400 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform"
+                         style={{boxShadow: '0 0 20px rgba(168, 85, 247, 0.3)'}}>
+                       <i className="fa-solid fa-envelope text-xl"></i>
+                    </div>
+                    <div>
+                       <div className="text-[10px] font-mono text-pink-400 uppercase mb-1">SECONDARY_CHANNEL</div>
+                       <div className="text-slate-200 group-hover:text-purple-400 transition-colors font-mono">junior_soza@hotmail.es</div>
+                    </div>
+                 </a>
+              </div>
+           </div>
+
+           <div className="h-[550px] hover-lift">
+              <ChatBot />
+           </div>
+        </section>
+
+      </main>
+
+      <footer className="py-20 border-t-2 border-cyan-500/20 backdrop-blur-md" style={{boxShadow: '0 -10px 40px rgba(0, 243, 255, 0.05)'}}>
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+           <div className="font-mono text-[10px] text-purple-500 uppercase tracking-widest">
+              <span className="text-cyan-400">▸</span> Built_with: React + Vite <span className="text-pink-400">●</span> 2026_Cyberpunk_Edition
+           </div>
+           <div className="flex gap-8 text-2xl">
+              <a href="https://github.com/barbaroja0803" 
+                 className="text-slate-600 hover:text-cyan-400 cursor-pointer transition-all hover:scale-125"
+                 style={{filter: 'drop-shadow(0 0 5px currentColor)'}}>
+                <i className="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/william-anchundia-soza/" 
+                 className="text-slate-600 hover:text-cyan-400 cursor-pointer transition-all hover:scale-125"
+                 style={{filter: 'drop-shadow(0 0 5px currentColor)'}}>
+                <i className="fa-brands fa-linkedin"></i>
+              </a>
+              <i className="fa-solid fa-terminal text-slate-600 hover:text-cyan-400 cursor-pointer transition-all hover:scale-125"
+                 style={{filter: 'drop-shadow(0 0 5px currentColor)'}}></i>
+           </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
