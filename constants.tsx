@@ -5,18 +5,29 @@ export const FULL_NAME = "JUNIOR WILLIAM ANCHUNDIA SOZA";
 export const TITLE = "Full-Cycle Engineer | Software Architect | DevOps Lead";
 export const BIO = "Desarrollador de software con 8 años de experiencia y especialización en automoción DevOps. Mi enfoque une la precisión del desarrollo de software de alto rendimiento con la robustez de la infraestructura moderna. No solo construyo el código; diseño el ecosistema donde vive, escala y evoluciona.";
 
+
+
 export const SKILLS: Skill[] = [
-  // Development Core
-  { name: "Flutter / Python", level: 92, category: "Development", icon: "fa-code" },
-  { name: "React / TS", level: 88, category: "Development", icon: "fa-laptop-code" },
-  { name: "Node.js / .net", level: 85, category: "Development", icon: "fa-server" },
-  { name: "PostgreSQL / Sql server", level: 90, category: "Development", icon: "fa-database" },
-  // Ops Core
-  { name: "Kubernetes", level: 95, category: "Infrastructure", icon: "fa-dharmachakra" },
-  { name: "Docker", level: 94, category: "Infrastructure", icon: "fa-cloud-arrow-up" },
-  { name: "AWS / Azure", level: 92, category: "Cloud", icon: "fa-brands fa-aws" },
-  { name: "GitHub Actions", level: 96, category: "Automation", icon: "fa-bolt" },
+  // Development
+  { name: "Python", level: 92, category: "Backend", icon: "fa-brands fa-python", color: "#3776AB" },
+  { name: "Flutter", level: 90, category: "Mobile", icon: "fa-mobile-screen-button", color: "#02569B" },
+  { name: "iOS", level: 85, category: "Mobile", icon: "fa-brands fa-apple", color: "#000000" },
+  { name: ".NET", level: 88, category: "Backend", icon: "fa-code", color: "#512BD4" },
+  { name: "React / TS", level: 94, category: "Frontend", icon: "fa-laptop-code", color: "#61DAFB" },
+  { name: "Node.js", level: 88, category: "Backend", icon: "fa-server", color: "#339933" },
+  // Mobile / Ops
+  { name: "Android", level: 88, category: "Mobile", icon: "fa-brands fa-android", color: "#3DDC84" },
+  { name: "DevOps", level: 96, category: "Culture", icon: "fa-infinity", color: "#000000" },
+  { name: "Kubernetes", level: 95, category: "Infrastructure", icon: "fa-dharmachakra", color: "#326CE5" },
+  { name: "Docker", level: 94, category: "Infrastructure", icon: "fa-brands fa-docker", color: "#2496ED" },
+
+  { name: "GitHub Actions", level: 96, category: "Automation", icon: "fa-bolt", color: "#2088FF" },
+  { name: "Terraform", level: 90, category: "Infrastructure", icon: "fa-cloud", color: "#844FBA" },
+  { name: "Ansible", level: 88, category: "Automation", icon: "fa-gears", color: "#EE0000" },
 ];
+
+
+
 
 export const EXPERIENCES: Experience[] = [
   {

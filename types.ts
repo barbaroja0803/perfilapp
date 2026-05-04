@@ -1,10 +1,13 @@
 
+
 export interface Skill {
   name: string;
   level: number;
-  category: 'Infrastructure' | 'Automation' | 'Cloud' | 'Development';
+  category: string;
   icon: string;
+  color?: string;
 }
+
 
 export interface Experience {
   company: string;
