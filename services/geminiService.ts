@@ -1,6 +1,6 @@
 
 import { GoogleGenAI } from "@google/genai";
-import { FULL_NAME, TITLE, BIO, SKILLS, EXPERIENCES } from '../constants';
+import { FULL_NAME, TITLE, BIO, SKILLS, EXPERIENCES, EDUCATIONS } from '../constants';
 
 // We initialize inside the call to ensure the latest API key is used if it changes
 const getAI = () => new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
@@ -14,6 +14,7 @@ Información de ${FULL_NAME}:
 - Bio: ${BIO}.
 - Habilidades: ${SKILLS.map(s => s.name).join(', ')}.
 - Historial: ${EXPERIENCES.map(e => `${e.role} en ${e.company}`).join(' | ')}.
+- Educación: ${EDUCATIONS.map(ed => `${ed.degree} en ${ed.institution} (${ed.period})`).join(' | ')}.
 
 Reglas de respuesta:
 1. Sé conciso. Usa listas si es necesario.

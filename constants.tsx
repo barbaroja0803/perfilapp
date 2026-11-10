@@ -1,9 +1,9 @@
 
-import { Skill, Experience } from './types';
+import { Skill, Experience, Education } from './types';
 
-export const FULL_NAME = "JUNIOR WILLIAM ANCHUNDIA SOZA";
-export const TITLE = "Full-Cycle Engineer | Software Architect | DevOps Lead";
-export const BIO = "Desarrollador de software con 8 años de experiencia y especialización en automoción DevOps. Mi enfoque une la precisión del desarrollo de software de alto rendimiento con la robustez de la infraestructura moderna. No solo construyo el código; diseño el ecosistema donde vive, escala y evoluciona.";
+export const FULL_NAME = "WILLIAM ANCHUNDIA SOZA";
+export const TITLE = "DevOps | Solutions Architect AWS | Desarrollador Senior Full Stack";
+export const BIO = "Desarrollador de software Senior Full Stack, Solutions Architect en AWS y especialista en DevOps. Mi enfoque une la precisión del desarrollo de software de alto rendimiento con la robustez y automatización de la infraestructura moderna en la nube.";
 
 
 
@@ -31,33 +31,66 @@ export const SKILLS: Skill[] = [
 
 export const EXPERIENCES: Experience[] = [
   {
-    company: "Global Tech Solutions",
-    role: "Senior Full-Cycle Engineer",
-    period: "2021 - Presente",
+    company: "Freelancer · Contrato temporal (En remoto)",
+    role: "DevOps Engineer",
+    period: "nov. de 2025 - actualidad",
     description: [
-      "Diseño y desarrollo de microservicios con arquitectura hexagonal.",
-      "Liderazgo en la orquestación de clústeres EKS para soportar +1M de peticiones concurrentes.",
-      "Optimización del performance de aplicaciones React mediante SSR y edge caching."
+      "Automatización en tareas repetitivas mediante scripts y herramientas DevOps, optimizando tiempos operativos.",
+      "Migración de arquitecturas heredadas (on-premise) hacia entornos de nube pública o híbrida, reduciendo costos operativos.",
+      "Implementación de estrategias de despliegue avanzado como Blue-Green o Canary para asegurar lanzamientos con cero tiempo de inactividad (Zero Downtime)."
     ]
   },
   {
-    company: "Innovate Corp",
-    role: "Software & DevOps Specialist",
-    period: "2018 - 2021",
+    company: "GUAYATUNA S.A · Jornada completa (Presencial)",
+    role: "DevOps - Analista programador",
+    period: "ago. de 2023 - nov. de 2025",
     description: [
-      "Desarrollo de APIs robustas en Python/FastAPI integradas con pipelines de CI/CD.",
-      "Automatización de infraestructura como código (IaC) para entornos de staging y prod.",
-      "Implementación de sistemas de mensajería asíncrona con RabbitMQ y Kafka."
+      "Automaticé tareas repetitivas mediante scripts y herramientas DevOps, optimizando tiempos operativos.",
+      "Trabajé con contenedores y herramientas DevOps para mejorar la portabilidad y consistencia de los entornos.",
+      "Participé en la implementación de pipelines de integración y despliegue continuo (CI/CD).",
+      "Di soporte a equipos de desarrollo durante el despliegue de aplicaciones y resolución de incidencias.",
+      "Contribuí a la documentación de procesos técnicos y buenas prácticas de operación."
     ]
   },
   {
-    company: "Core Systems S.A.",
-    role: "Full Stack Developer",
-    period: "2015 - 2018",
+    company: "Telconet · Jornada completa (Guayas, Ecuador · En remoto)",
+    role: "Ingeniero de software",
+    period: "abr. de 2023 - jun. de 2023",
     description: [
-      "Desarrollo de aplicaciones web empresariales utilizando el stack MEAN.",
-      "Administración y tuning de bases de datos relacionales para optimización de queries.",
-      "Migración de aplicaciones legacy a arquitecturas modernas basadas en contenedores."
+      "Diseñé y creé software en diferentes plataformas.",
+      "Aporté en mejoras continuas a software ya desarrollados."
     ]
+  }
+];
+
+export const EDUCATIONS: Education[] = [
+  {
+    institution: "Escuela de Posgrado Newman",
+    degree: "Maestría en Desarrollo y Operaciones de Software (DevOps), Computer Science",
+    period: "ago. de 2024 – nov. de 2025",
+    icon: "fa-graduation-cap",
+    highlights: [
+      "Ingeniero DevOps",
+      "Gestor de proyectos en la nube",
+      "Ingeniero de automatización",
+      "Director de QA (Quality Assurance) o Director de análisis de calidad",
+      "Ingeniero SRE (Site Reliability Engineer) o Ingeniero de confiabilidad",
+      "Consultor de BI (Business Intelligence) o Consultor de Inteligencia de Negocio",
+      "Jefe de proyecto Big Data",
+      "Arquitecto DevOps o Arquitecto Cloud"
+    ]
+  },
+  {
+    institution: "ULEAM",
+    degree: "Ingeniero en Sistemas, Engineering Science",
+    period: "feb. de 2013 – may. de 2018",
+    icon: "fa-building-columns"
+  },
+  {
+    institution: "TOTAL EDUCATION PROGRAM",
+    degree: "Inglés B2 Cambridge",
+    period: "oct. de 2026 – Actualidad",
+    status: "Actualidad",
+    icon: "fa-language"
   }
 ];

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FULL_NAME, TITLE, BIO, SKILLS, EXPERIENCES } from './constants';
+import { FULL_NAME, TITLE, BIO, SKILLS, EXPERIENCES, EDUCATIONS } from './constants';
 import ChatBot from './components/ChatBot';
 import ParticleCanvas from './components/ParticleCanvas';
 import SideNav from './components/SideNav';
@@ -11,7 +11,7 @@ const App: React.FC = () => {
   React.useEffect(() => {
     const observerOptions = {
       root: null,
-      threshold: 0.5,
+      threshold: 0.2,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -37,9 +37,9 @@ const App: React.FC = () => {
       <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div className="w-full px-6 lg:px-12 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="font-mono text-cyan-400 font-bold tracking-tighter text-xl">WILLIAM ANCHUNDIA SOZA</span>
+            <span className="font-mono text-cyan-400 font-bold tracking-tighter text-xl">{FULL_NAME}</span>
             <div className="hidden sm:block h-4 w-px bg-slate-800"></div>
-            <span className="hidden sm:block text-[10px] font-mono text-slate-500 uppercase tracking-widest">Architect_Build: stable_v8.0</span>
+            <span className="hidden sm:block text-[10px] font-mono text-slate-500 uppercase tracking-widest">{TITLE}</span>
           </div>
           <div className="flex gap-4">
             <div className="flex flex-col items-end">
@@ -64,8 +64,9 @@ const App: React.FC = () => {
               </div>
               <WordCube />
               <div className="flex flex-wrap justify-center gap-4 font-mono text-[10px]">
-                <div className="px-6 py-2 bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-200 transition-all shadow-sm"># SOFTWARE_ENGINEERING</div>
-                <div className="px-6 py-2 bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-200 transition-all shadow-sm"># DEVOPS_CULTURE</div>
+                <div className="px-6 py-2 bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-200 transition-all shadow-sm"># DEVOPS</div>
+                <div className="px-6 py-2 bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-200 transition-all shadow-sm"># SOLUTIONS_ARCHITECT_AWS</div>
+                <div className="px-6 py-2 bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-200 transition-all shadow-sm"># DESARROLLADOR_SENIOR_FULL_STACK</div>
               </div>
             </div>
           </div>
@@ -88,10 +89,10 @@ const App: React.FC = () => {
 
 
         {/* Experience - The Commit History */}
-        <section id="experience" className="min-h-screen lg:h-screen snap-section py-20 lg:py-0">
+        <section id="experience" className="min-h-screen snap-section py-24">
           <div className="reveal-content h-full flex flex-col justify-center px-6 lg:px-32">
             <div className="section-tag mb-16" style={{ borderColor: 'var(--ops-lime)' }}>Deployment_Registry</div>
-            <div className="relative space-y-24">
+            <div className="relative space-y-16">
               {/* Timeline Line */}
               <div className="absolute left-0 lg:left-4 top-0 bottom-0 w-px bg-gradient-to-b from-lime-400/50 via-slate-800 to-transparent"></div>
 
@@ -107,10 +108,10 @@ const App: React.FC = () => {
                     </div>
 
                     <div className="lg:col-span-9">
-                      <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight group-hover:text-lime-400 transition-colors">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-lime-400 transition-colors">
                         {exp.role}
                       </h3>
-                      <div className="space-y-6">
+                      <div className="space-y-3">
                         {exp.description.map((item, i) => (
                           <p key={i} className="text-slate-600 font-light leading-relaxed max-w-2xl border-l border-slate-200 pl-6 hover:border-lime-400/30 transition-colors">
                             {item}
@@ -119,6 +120,73 @@ const App: React.FC = () => {
                       </div>
                     </div>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Education - Academic Credentials */}
+        <section id="education" className="min-h-screen snap-section py-24">
+          <div className="reveal-content h-full flex flex-col justify-center px-6 lg:px-32">
+            <div className="flex items-center gap-4 mb-16">
+              <div className="section-tag">Academic_Credentials // Educación</div>
+              <div className="h-px flex-1 bg-gradient-to-r from-slate-200 to-transparent"></div>
+            </div>
+
+            <div className="grid gap-8">
+              {EDUCATIONS.map((edu, idx) => (
+                <div
+                  key={idx}
+                  className="group relative bg-white border border-slate-200 hover:border-cyan-500/40 p-8 transition-all duration-300 shadow-sm hover:shadow-xl"
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                    <div className="flex items-start gap-5">
+                      <div className="w-12 h-12 shrink-0 bg-slate-900 text-cyan-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                        <i className={`fa-solid ${edu.icon || 'fa-graduation-cap'} text-lg`}></i>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex flex-wrap items-center gap-3">
+                          <h3 className="text-2xl font-bold text-slate-900 tracking-tight group-hover:text-cyan-600 transition-colors">
+                            {edu.institution}
+                          </h3>
+                          {edu.status && (
+                            <span className="px-3 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 font-mono text-[10px] uppercase tracking-widest">
+                              {edu.status}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-base sm:text-lg text-slate-700 font-medium">
+                          {edu.degree}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="lg:text-right shrink-0">
+                      <span className="inline-block font-mono text-xs text-cyan-600 uppercase tracking-widest bg-slate-50 border border-slate-200 px-3 py-1.5">
+                        {edu.period}
+                      </span>
+                    </div>
+                  </div>
+
+                  {edu.highlights && edu.highlights.length > 0 && (
+                    <div className="mt-6 pt-6 border-t border-slate-100">
+                      <div className="text-[10px] font-mono text-slate-400 uppercase tracking-widest mb-4">
+                        Actividades y grupos // Especialización
+                      </div>
+                      <div className="grid sm:grid-cols-2 gap-3">
+                        {edu.highlights.map((item, i) => (
+                          <div
+                            key={i}
+                            className="flex items-start gap-2.5 text-sm text-slate-600 font-light leading-relaxed"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-2 shrink-0"></span>
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

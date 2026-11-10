@@ -16,6 +16,15 @@ export interface Experience {
   description: string[];
 }
 
+export interface Education {
+  institution: string;
+  degree: string;
+  period: string;
+  status?: string;
+  highlights?: string[];
+  icon?: string;
+}
+
 export interface Message {
   role: 'user' | 'assistant';
   content: string;

@@ -4,7 +4,8 @@ const sections = [
   { id: 'hero', label: '01 // ARCHITECT' },
   { id: 'skills', label: '02 // RESOURCES' },
   { id: 'experience', label: '03 // REGISTRY' },
-  { id: 'contact', label: '04 // KERNEL' },
+  { id: 'education', label: '04 // EDUCATION' },
+  { id: 'contact', label: '05 // KERNEL' },
 ];
 
 const SideNav: React.FC = () => {
