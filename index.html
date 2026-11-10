@@ -17,7 +17,7 @@
         }
         html {
             scroll-behavior: smooth;
-            scroll-snap-type: y mandatory;
+            scroll-snap-type: y proximity;
         }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -103,13 +103,12 @@
         /* Section Reveal Effect */
         .snap-section {
             scroll-snap-align: start;
-            scroll-snap-stop: always;
             perspective: 1000px;
         }
         .reveal-content {
             opacity: 0;
-            transform: translateY(40px) scale(0.95);
-            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: translateY(24px) scale(0.98);
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal-content.is-visible {
             opacity: 1;

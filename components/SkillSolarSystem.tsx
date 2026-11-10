@@ -10,11 +10,11 @@ const SkillSolarSystem: React.FC = () => {
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
 
   // Constants for orbit layout
-  const CENTER_SIZE = 180;
-  const BASE_ORBIT_RADIUS = 260;
+  const CENTER_SIZE = 160;
+  const BASE_ORBIT_RADIUS = 210;
 
   return (
-    <div className="relative w-full h-[600px] lg:h-[800px] flex items-center justify-center overflow-visible">
+    <div className="relative w-full h-[560px] lg:h-[660px] flex items-center justify-center overflow-visible">
       {/* Intense Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(34,211,238,0.15)_0%,_transparent_70%)] rounded-full blur-[120px]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.1)_0%,_transparent_50%)] rounded-full blur-[100px]"></div>
@@ -54,7 +54,7 @@ const SkillSolarSystem: React.FC = () => {
       {/* Skill Planets */}
       <div className="absolute inset-0 flex items-center justify-center">
         {SKILLS.map((skill, idx) => {
-          const orbitRadius = BASE_ORBIT_RADIUS + (idx % 2 === 0 ? 0 : 80);
+          const orbitRadius = BASE_ORBIT_RADIUS + (idx % 2 === 0 ? 0 : 65);
           const orbitDuration = 30 + idx * 10;
           const initialAngle = (idx / SKILLS.length) * 360;
 
@@ -128,7 +128,7 @@ const SkillSolarSystem: React.FC = () => {
                         className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-10 transition-opacity"
                         style={{ backgroundColor: skill.color }}
                       ></div>
-                      <i className={`fa-solid ${skill.icon} text-3xl relative z-10 group-hover:scale-110 transition-all`}></i>
+                      <i className={`${skill.icon.includes('fa-brands') ? skill.icon : `fa-solid ${skill.icon}`} text-3xl relative z-10 group-hover:scale-110 transition-all`}></i>
                     </div>
 
                     {/* Light Planet Label */}
@@ -182,7 +182,7 @@ const SkillSolarSystem: React.FC = () => {
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-8">
                   <div className="w-16 h-16 bg-slate-900 flex items-center justify-center text-cyan-400 shadow-xl">
-                    <i className={`fa-solid ${selectedSkill.icon} text-2xl`}></i>
+                    <i className={`${selectedSkill.icon.includes('fa-brands') ? selectedSkill.icon : `fa-solid ${selectedSkill.icon}`} text-2xl`}></i>
                   </div>
                   <button
                     onClick={() => setSelectedSkill(null)}

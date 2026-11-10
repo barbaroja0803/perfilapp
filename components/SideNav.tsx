@@ -14,7 +14,7 @@ const SideNav: React.FC = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: '-40% 0px -40% 0px',
+      rootMargin: '-35% 0px -35% 0px',
       threshold: 0,
     };
 
@@ -37,14 +37,15 @@ const SideNav: React.FC = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
+    setActiveSection(id);
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   return (
-    <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-10 p-8 bg-white/80 backdrop-blur-xl border border-slate-200 rounded-[2rem] items-end shadow-2xl">
+    <div className="fixed right-6 lg:right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-6 p-6 bg-white/85 backdrop-blur-xl border border-slate-200 rounded-[2rem] items-end shadow-2xl">
       {sections.map((section) => (
         <button
           key={section.id}
